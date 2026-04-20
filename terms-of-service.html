@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syarat & Ketentuan / Terms of Service — PialaSport</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0d0d;
+      --surface:   #161616;
+      --border:    #2a2a2a;
+      --accent:    #e63946;
+      --text:      #e8e8e8;
+      --muted:     #888;
+      --heading:   #ffffff;
+      --radius:    10px;
+      --max-w:     760px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      padding: 24px 16px 64px;
+    }
+
+    .wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: grid; place-items: center;
+      font-size: 22px;
+    }
+    .logo-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.3px;
+    }
+    .logo-tagline {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .page-title {
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 800;
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .page-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .updated {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    .lang-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+    }
+    .lang-btn {
+      padding: 7px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+    .section-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 14px;
+    }
+    .section p { margin-bottom: 12px; }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .section ul li { margin-bottom: 6px; }
+
+    .notice {
+      background: rgba(230, 57, 70, 0.08);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+    }
+
+    .platform-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+      list-style: none;
+      padding: 0;
+    }
+    .platform-list li { margin: 0; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: #1e1e1e;
+    }
+    .pill.fb    { border-color: #1877f2; color: #1877f2; }
+    .pill.ig    { border-color: #e1306c; color: #e1306c; }
+    .pill.tk    { border-color: #69c9d0; color: #69c9d0; }
+    .pill.tg    { border-color: #2aabee; color: #2aabee; }
+
+    .contact-card {
+      background: #1a1a1a;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 24px;
+    }
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-card a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+    footer a { color: var(--muted); text-decoration: underline; }
+
+    @media (max-width: 500px) {
+      .section { padding: 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <div class="logo-icon">⚽</div>
+      <div>
+        <div class="logo-name">PialaSport</div>
+        <div class="logo-tagline">Berita Bola Indonesia</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title -->
+  <h1 class="page-title">Syarat &amp; Ketentuan<br><span style="color:var(--muted);font-weight:400;font-size:0.7em">Terms of Service</span></h1>
+  <p class="page-subtitle">Berlaku untuk / Applicable to: PialaSport Automated Content Bot</p>
+  <span class="updated">Terakhir diperbarui / Last updated: 20 April 2026</span>
+
+  <!-- Language tabs -->
+  <div class="lang-tabs">
+    <button class="lang-btn active" onclick="switchLang('id', this)">🇮🇩 Bahasa Indonesia</button>
+    <button class="lang-btn" onclick="switchLang('en', this)">🇬🇧 English</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- BAHASA INDONESIA                                            -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div id="lang-id" class="lang-section active">
+
+    <div class="section">
+      <div class="section-num">01</div>
+      <h2>Penerimaan Syarat</h2>
+      <p>
+        Dengan menggunakan, mengikuti, atau berinteraksi dengan konten yang
+        diterbitkan oleh PialaSport di platform mana pun, Anda menyatakan telah
+        membaca dan menyetujui Syarat &amp; Ketentuan ini.
+      </p>
+      <p>
+        Jika Anda tidak setuju dengan ketentuan ini, harap berhenti menggunakan
+        layanan atau konten yang diterbitkan oleh PialaSport.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">02</div>
+      <h2>Deskripsi Layanan</h2>
+      <p>
+        PialaSport adalah sistem otomasi konten sepakbola yang beroperasi sebagai
+        akun/channel media sosial. Sistem ini:
+      </p>
+      <ul>
+        <li>Mengumpulkan berita sepakbola dari sumber berita publik</li>
+        <li>Memproses dan memformat konten menggunakan kecerdasan buatan (AI)</li>
+        <li>Memposting konten secara otomatis ke platform media sosial</li>
+        <li>Beroperasi 3 kali sehari pada jam 07:00, 12:30, dan 21:00 WIB</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-num">03</div>
+      <h2>Platform yang Digunakan</h2>
+      <p>PialaSport memposting konten ke platform berikut menggunakan API resmi masing-masing platform:</p>
+      <ul class="platform-list">
+        <li><span class="pill fb">📘 Facebook</span></li>
+        <li><span class="pill ig">📸 Instagram</span></li>
+        <li><span class="pill tk">🎵 TikTok</span></li>
+        <li><span class="pill tg">✈️ Telegram</span></li>
+      </ul>
+      <p>
+        Penggunaan PialaSport tunduk pada Syarat Penggunaan masing-masing platform
+        tersebut, termasuk namun tidak terbatas pada:
+        <a href="https://www.facebook.com/policies" target="_blank" rel="noopener" style="color:var(--accent)">Kebijakan Facebook</a>,
+        <a href="https://help.instagram.com/terms/statement" target="_blank" rel="noopener" style="color:var(--accent)">Ketentuan Instagram</a>,
+        <a href="https://www.tiktok.com/legal/terms-of-service" target="_blank" rel="noopener" style="color:var(--accent)">Ketentuan TikTok</a>.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">04</div>
+      <h2>Sumber Konten &amp; Hak Cipta</h2>
+      <p>
+        Konten yang diterbitkan oleh PialaSport bersumber dari berita sepakbola publik.
+        PialaSport berupaya untuk:
+      </p>
+      <ul>
+        <li>Mencantumkan sumber berita asli pada setiap konten</li>
+        <li>Tidak memplagiat atau menduplikasi konten secara verbatim</li>
+        <li>Menggunakan gambar dengan lisensi yang sesuai (Unsplash API)</li>
+      </ul>
+      <div class="notice">
+        ⚠️ Jika Anda adalah pemilik konten dan merasa konten Anda digunakan tanpa
+        izin yang layak, silakan hubungi kami untuk penghapusan segera.
+      </div>
+      <p>
+        Semua merek dagang, logo klub, dan nama liga adalah milik masing-masing
+        pemiliknya. PialaSport tidak mengklaim kepemilikan atas merek tersebut.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">05</div>
+      <h2>Akurasi Informasi</h2>
+      <p>
+        PialaSport berusaha menyajikan informasi yang akurat dan terkini. Namun,
+        karena konten dibuat secara otomatis menggunakan kecerdasan buatan berdasarkan
+        sumber berita publik, kami tidak dapat menjamin:
+      </p>
+      <ul>
+        <li>Keakuratan 100% setiap detail statistik atau fakta</li>
+        <li>Kelengkapan konteks dari setiap berita</li>
+        <li>Bebas dari kesalahan interpretasi AI</li>
+      </ul>
+      <p>
+        Konten PialaSport dimaksudkan sebagai hiburan dan informasi umum, bukan
+        sebagai sumber resmi atau berita jurnalistik terverifikasi.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">06</div>
+      <h2>Larangan Penggunaan</h2>
+      <p>Dilarang keras:</p>
+      <ul>
+        <li>Menggunakan konten PialaSport untuk tujuan komersial tanpa izin tertulis</li>
+        <li>Mendistribusikan ulang konten dalam jumlah besar tanpa atribusi</li>
+        <li>Menggunakan bot atau scraper untuk mengambil konten secara massal</li>
+        <li>Menyebarkan konten PialaSport yang telah dimodifikasi secara menyesatkan</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-num">07</div>
+      <h2>Batasan Tanggung Jawab</h2>
+      <p>
+        PialaSport disediakan "sebagaimana adanya" (<em>as-is</em>). Kami tidak
+        bertanggung jawab atas:
+      </p>
+      <ul>
+        <li>Kerugian yang timbul akibat penggunaan atau ketidakmampuan menggunakan layanan</li>
+        <li>Keputusan yang dibuat berdasarkan informasi dari konten kami</li>
+        <li>Gangguan layanan akibat pemeliharaan atau masalah teknis</li>
+        <li>Perubahan atau penghapusan konten oleh platform media sosial</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-num">08</div>
+      <h2>Penghentian Layanan</h2>
+      <p>
+        Kami berhak menghentikan, menangguhkan, atau mengubah layanan PialaSport
+        kapan saja tanpa pemberitahuan sebelumnya.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">09</div>
+      <h2>Hukum yang Berlaku</h2>
+      <p>
+        Syarat &amp; Ketentuan ini diatur oleh hukum Republik Indonesia.
+        Segala sengketa diselesaikan melalui musyawarah mufakat, dan jika tidak
+        tercapai, melalui jalur hukum yang berlaku di Indonesia.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">10</div>
+      <h2>Perubahan Ketentuan</h2>
+      <p>
+        Kami dapat mengubah Syarat &amp; Ketentuan ini sewaktu-waktu. Perubahan
+        berlaku segera setelah diterbitkan. Penggunaan layanan yang berkelanjutan
+        setelah perubahan dianggap sebagai penerimaan atas ketentuan baru.
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <strong>📩 Hubungi Kami</strong><br><br>
+      Pertanyaan, keluhan, atau permintaan penghapusan konten:<br>
+      <a href="mailto:colasn095@gmail.com">colasn095@gmail.com</a>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- ENGLISH                                                     -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div id="lang-en" class="lang-section">
+
+    <div class="section">
+      <div class="section-num">01</div>
+      <h2>Acceptance of Terms</h2>
+      <p>
+        By using, following, or interacting with content published by PialaSport
+        on any platform, you acknowledge that you have read and agree to these
+        Terms of Service.
+      </p>
+      <p>
+        If you do not agree with these terms, please stop using or interacting
+        with content published by PialaSport.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">02</div>
+      <h2>Service Description</h2>
+      <p>
+        PialaSport is a football content automation system that operates as a
+        social media account/channel. This system:
+      </p>
+      <ul>
+        <li>Collects football news from public news sources</li>
+        <li>Processes and formats content using artificial intelligence (AI)</li>
+        <li>Automatically posts content to social media platforms</li>
+        <li>Operates 3 times per day at 07:00, 12:30, and 21:00 WIB (Jakarta time)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-num">03</div>
+      <h2>Platforms Used</h2>
+      <p>PialaSport posts content to the following platforms using each platform's official API:</p>
+      <ul class="platform-list">
+        <li><span class="pill fb">📘 Facebook</span></li>
+        <li><span class="pill ig">📸 Instagram</span></li>
+        <li><span class="pill tk">🎵 TikTok</span></li>
+        <li><span class="pill tg">✈️ Telegram</span></li>
+      </ul>
+      <p>
+        Use of PialaSport is subject to the Terms of Service of each respective
+        platform, including but not limited to:
+        <a href="https://www.facebook.com/policies" target="_blank" rel="noopener" style="color:var(--accent)">Facebook Policies</a>,
+        <a href="https://help.instagram.com/terms/statement" target="_blank" rel="noopener" style="color:var(--accent)">Instagram Terms</a>,
+        <a href="https://www.tiktok.com/legal/terms-of-service" target="_blank" rel="noopener" style="color:var(--accent)">TikTok Terms</a>.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">04</div>
+      <h2>Content Sources &amp; Copyright</h2>
+      <p>
+        Content published by PialaSport is sourced from public football news.
+        PialaSport endeavors to:
+      </p>
+      <ul>
+        <li>Credit the original news source in each piece of content</li>
+        <li>Not plagiarize or verbatim duplicate content</li>
+        <li>Use images with appropriate licenses (Unsplash API)</li>
+      </ul>
+      <div class="notice">
+        ⚠️ If you are a content owner and believe your content is being used
+        without adequate permission, please contact us for immediate removal.
+      </div>
+      <p>
+        All trademarks, club logos, and league names are the property of their
+        respective owners. PialaSport makes no claim of ownership over such marks.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">05</div>
+      <h2>Information Accuracy</h2>
+      <p>
+        PialaSport strives to present accurate and up-to-date information. However,
+        as content is automatically generated using artificial intelligence based
+        on public news sources, we cannot guarantee:
+      </p>
+      <ul>
+        <li>100% accuracy of every statistic or fact</li>
+        <li>Completeness of context for every news item</li>
+        <li>Freedom from AI interpretation errors</li>
+      </ul>
+      <p>
+        PialaSport content is intended as entertainment and general information,
+        not as an official source or verified journalistic reporting.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">06</div>
+      <h2>Prohibited Uses</h2>
+      <p>The following are strictly prohibited:</p>
+      <ul>
+        <li>Using PialaSport content for commercial purposes without written permission</li>
+        <li>Bulk redistribution of content without attribution</li>
+        <li>Using bots or scrapers to mass-collect content</li>
+        <li>Spreading PialaSport content that has been misleadingly modified</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-num">07</div>
+      <h2>Limitation of Liability</h2>
+      <p>
+        PialaSport is provided "as-is". We are not responsible for:
+      </p>
+      <ul>
+        <li>Losses arising from use of or inability to use the service</li>
+        <li>Decisions made based on information from our content</li>
+        <li>Service interruptions due to maintenance or technical issues</li>
+        <li>Content changes or removals by social media platforms</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-num">08</div>
+      <h2>Service Termination</h2>
+      <p>
+        We reserve the right to discontinue, suspend, or modify the PialaSport
+        service at any time without prior notice.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">09</div>
+      <h2>Governing Law</h2>
+      <p>
+        These Terms of Service are governed by the laws of the Republic of Indonesia.
+        Any disputes shall be resolved through good-faith negotiation, and if
+        unresolved, through the applicable legal channels in Indonesia.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">10</div>
+      <h2>Changes to Terms</h2>
+      <p>
+        We may update these Terms of Service at any time. Changes take effect
+        immediately upon publication. Continued use of the service after changes
+        constitutes acceptance of the new terms.
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <strong>📩 Contact Us</strong><br><br>
+      Questions, complaints, or content removal requests:<br>
+      <a href="mailto:colasn095@gmail.com">colasn095@gmail.com</a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 PialaSport · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a></p>
+    <p style="margin-top:6px">PialaSport adalah proyek independen dan tidak berafiliasi dengan FIFA, UEFA, PSSI, atau platform media sosial mana pun.</p>
+  </footer>
+
+</div>
+
+<script>
+  function switchLang(lang, btn) {
+    document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>

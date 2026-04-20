@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kebijakan Privasi / Privacy Policy — PialaSport</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0d0d;
+      --surface:   #161616;
+      --border:    #2a2a2a;
+      --accent:    #e63946;
+      --text:      #e8e8e8;
+      --muted:     #888;
+      --heading:   #ffffff;
+      --radius:    10px;
+      --max-w:     760px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      padding: 24px 16px 64px;
+    }
+
+    .wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    /* ── Header ─────────────────────────────────────── */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: grid; place-items: center;
+      font-size: 22px;
+    }
+    .logo-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.3px;
+    }
+    .logo-tagline {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── Page title ──────────────────────────────────── */
+    .page-title {
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 800;
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .page-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .updated {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    /* ── Language tabs ───────────────────────────────── */
+    .lang-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+    }
+    .lang-btn {
+      padding: 7px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+
+    /* ── Section cards ───────────────────────────────── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+    .section-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 14px;
+    }
+    .section p { margin-bottom: 12px; color: var(--text); }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .section ul li { margin-bottom: 6px; }
+
+    /* ── Platform pills ──────────────────────────────── */
+    .platform-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+      list-style: none;
+      padding: 0;
+    }
+    .platform-list li {
+      margin: 0;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: #1e1e1e;
+    }
+    .pill.fb    { border-color: #1877f2; color: #1877f2; }
+    .pill.ig    { border-color: #e1306c; color: #e1306c; }
+    .pill.tk    { border-color: #69c9d0; color: #69c9d0; }
+    .pill.tg    { border-color: #2aabee; color: #2aabee; }
+
+    /* ── Contact card ────────────────────────────────── */
+    .contact-card {
+      background: #1a1a1a;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 24px;
+    }
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+    footer a { color: var(--muted); text-decoration: underline; }
+
+    @media (max-width: 500px) {
+      .section { padding: 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <div class="logo-icon">⚽</div>
+      <div>
+        <div class="logo-name">PialaSport</div>
+        <div class="logo-tagline">Berita Bola Indonesia</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title -->
+  <h1 class="page-title">Kebijakan Privasi<br><span style="color:var(--muted);font-weight:400;font-size:0.7em">Privacy Policy</span></h1>
+  <p class="page-subtitle">Berlaku untuk / Applicable to: PialaSport Automated Content Bot</p>
+  <span class="updated">Terakhir diperbarui / Last updated: 20 April 2026</span>
+
+  <!-- Language tabs -->
+  <div class="lang-tabs">
+    <button class="lang-btn active" onclick="switchLang('id', this)">🇮🇩 Bahasa Indonesia</button>
+    <button class="lang-btn" onclick="switchLang('en', this)">🇬🇧 English</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- BAHASA INDONESIA                                            -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div id="lang-id" class="lang-section active">
+
+    <div class="section">
+      <div class="section-num">01</div>
+      <h2>Tentang PialaSport</h2>
+      <p>
+        PialaSport adalah sistem otomasi konten sepakbola yang mengumpulkan berita
+        olahraga dari sumber terpercaya, lalu secara otomatis memposting konten
+        tersebut ke berbagai platform media sosial.
+      </p>
+      <p>
+        Kebijakan Privasi ini menjelaskan bagaimana kami menangani data dalam proses
+        operasional bot ini.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">02</div>
+      <h2>Platform yang Diakses</h2>
+      <p>
+        PialaSport terhubung ke platform berikut untuk keperluan posting konten otomatis:
+      </p>
+      <ul class="platform-list">
+        <li><span class="pill fb">📘 Facebook</span></li>
+        <li><span class="pill ig">📸 Instagram</span></li>
+        <li><span class="pill tk">🎵 TikTok</span></li>
+        <li><span class="pill tg">✈️ Telegram</span></li>
+      </ul>
+      <p>
+        Akses ke platform tersebut dilakukan menggunakan <strong>token akses resmi</strong>
+        yang diberikan oleh masing-masing platform melalui program developer mereka
+        (Meta Graph API, TikTok for Developers, Telegram Bot API).
+      </p>
+      <p>
+        Bot ini <strong>tidak membaca pesan pribadi</strong>, tidak mengakses kontak
+        pengguna lain, dan tidak memiliki akses ke data akun selain izin yang diperlukan
+        untuk memposting konten ke halaman/channel yang dikelola.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">03</div>
+      <h2>Data yang Dikumpulkan</h2>
+      <p>PialaSport <strong>tidak mengumpulkan data pribadi pengguna</strong>. Data yang diproses oleh sistem ini terbatas pada:</p>
+      <ul>
+        <li><strong>Konten berita olahraga</strong> — diambil dari RSS feed dan API berita publik (Detik, Bola.net, Goal.com, dll)</li>
+        <li><strong>Data statistik sepakbola</strong> — dari API Football untuk informasi pemain dan pertandingan</li>
+        <li><strong>Gambar publik</strong> — background dari Unsplash API menggunakan kueri tematik</li>
+        <li><strong>Log operasional</strong> — catatan internal tentang jadwal posting, status pengiriman, dan error sistem (disimpan lokal, tidak dibagikan)</li>
+      </ul>
+      <p>
+        Semua data yang diproses bersifat <strong>konten publik terkait olahraga</strong>
+        dan digunakan semata-mata untuk tujuan pembuatan dan distribusi konten sepakbola.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">04</div>
+      <h2>Penggunaan API Pihak Ketiga</h2>
+      <p>Sistem ini menggunakan API dari layanan berikut:</p>
+      <ul>
+        <li><strong>Anthropic Claude API</strong> — untuk generate teks konten secara otomatis</li>
+        <li><strong>Football API (api-sports.io)</strong> — data pemain dan statistik</li>
+        <li><strong>Unsplash API</strong> — gambar latar bertema olahraga</li>
+        <li><strong>Meta Graph API</strong> — posting ke Facebook Page dan Instagram Business</li>
+        <li><strong>TikTok for Developers API</strong> — posting video/konten ke akun TikTok</li>
+        <li><strong>Telegram Bot API</strong> — posting ke channel Telegram</li>
+      </ul>
+      <p>
+        Setiap layanan pihak ketiga memiliki kebijakan privasi tersendiri. Kami
+        menyarankan Anda membaca kebijakan privasi masing-masing platform.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">05</div>
+      <h2>Penyimpanan & Keamanan Data</h2>
+      <p>
+        Token akses API disimpan dalam file konfigurasi lokal (<code>.env</code>) yang
+        tidak pernah diunggah ke repositori publik atau layanan pihak ketiga.
+      </p>
+      <p>
+        Log operasional disimpan secara lokal di server yang dikelola oleh operator
+        dan tidak dibagikan kepada pihak mana pun.
+      </p>
+      <p>
+        Sistem ini <strong>tidak menggunakan database</strong> untuk menyimpan data pengguna.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">06</div>
+      <h2>Hak Pengguna</h2>
+      <p>
+        Karena PialaSport tidak mengumpulkan data pribadi dari pengguna, tidak ada
+        profil pengguna yang perlu dihapus atau diubah.
+      </p>
+      <p>
+        Jika Anda menemukan konten yang bermasalah atau ingin mengajukan pertanyaan
+        terkait privasi, silakan hubungi kami melalui informasi kontak di bawah ini.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">07</div>
+      <h2>Perubahan Kebijakan</h2>
+      <p>
+        Kebijakan Privasi ini dapat diperbarui sewaktu-waktu. Perubahan signifikan
+        akan diumumkan melalui channel Telegram resmi PialaSport. Tanggal pembaruan
+        terakhir selalu dicantumkan di bagian atas halaman ini.
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <strong>📩 Hubungi Kami</strong><br><br>
+      Pertanyaan terkait privasi dapat dikirimkan ke:<br>
+      <a href="mailto:colasn095@gmail.com">colasn095@gmail.com</a>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- ENGLISH                                                     -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div id="lang-en" class="lang-section">
+
+    <div class="section">
+      <div class="section-num">01</div>
+      <h2>About PialaSport</h2>
+      <p>
+        PialaSport is a football content automation system that collects sports news
+        from trusted sources and automatically publishes content to various social
+        media platforms.
+      </p>
+      <p>
+        This Privacy Policy explains how data is handled during the operational
+        process of this bot.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">02</div>
+      <h2>Platforms Accessed</h2>
+      <p>
+        PialaSport connects to the following platforms for the purpose of automated
+        content posting:
+      </p>
+      <ul class="platform-list">
+        <li><span class="pill fb">📘 Facebook</span></li>
+        <li><span class="pill ig">📸 Instagram</span></li>
+        <li><span class="pill tk">🎵 TikTok</span></li>
+        <li><span class="pill tg">✈️ Telegram</span></li>
+      </ul>
+      <p>
+        Access to these platforms is performed using <strong>official access tokens</strong>
+        granted by each platform through their developer programs (Meta Graph API,
+        TikTok for Developers, Telegram Bot API).
+      </p>
+      <p>
+        This bot does <strong>not read private messages</strong>, does not access other
+        users' contacts, and has no access to account data beyond the permissions
+        required to post content to managed pages/channels.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">03</div>
+      <h2>Data Collected</h2>
+      <p>PialaSport <strong>does not collect personal user data</strong>. Data processed by this system is limited to:</p>
+      <ul>
+        <li><strong>Sports news content</strong> — fetched from RSS feeds and public news APIs (Detik, Bola.net, Goal.com, etc.)</li>
+        <li><strong>Football statistics data</strong> — from Football API for player and match information</li>
+        <li><strong>Public imagery</strong> — background images from Unsplash API using thematic queries</li>
+        <li><strong>Operational logs</strong> — internal records of posting schedules, delivery status, and system errors (stored locally, never shared)</li>
+      </ul>
+      <p>
+        All processed data consists of <strong>publicly available sports-related content</strong>
+        and is used solely for the creation and distribution of football content.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">04</div>
+      <h2>Third-Party API Usage</h2>
+      <p>This system uses APIs from the following services:</p>
+      <ul>
+        <li><strong>Anthropic Claude API</strong> — for automated text content generation</li>
+        <li><strong>Football API (api-sports.io)</strong> — player data and statistics</li>
+        <li><strong>Unsplash API</strong> — sports-themed background images</li>
+        <li><strong>Meta Graph API</strong> — posting to Facebook Page and Instagram Business</li>
+        <li><strong>TikTok for Developers API</strong> — posting video/content to TikTok account</li>
+        <li><strong>Telegram Bot API</strong> — posting to Telegram channel</li>
+      </ul>
+      <p>
+        Each third-party service has its own privacy policy. We encourage you to
+        review the privacy policy of each respective platform.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">05</div>
+      <h2>Data Storage &amp; Security</h2>
+      <p>
+        API access tokens are stored in a local configuration file (<code>.env</code>)
+        that is never uploaded to public repositories or third-party services.
+      </p>
+      <p>
+        Operational logs are stored locally on the operator-managed server and are
+        not shared with any party.
+      </p>
+      <p>
+        This system <strong>does not use a database</strong> to store user data.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">06</div>
+      <h2>User Rights</h2>
+      <p>
+        Since PialaSport does not collect personal data from users, there are no
+        user profiles to delete or modify.
+      </p>
+      <p>
+        If you encounter problematic content or wish to raise a privacy-related
+        inquiry, please contact us via the contact information below.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">07</div>
+      <h2>Policy Changes</h2>
+      <p>
+        This Privacy Policy may be updated at any time. Significant changes will be
+        announced through the official PialaSport Telegram channel. The last updated
+        date is always displayed at the top of this page.
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <strong>📩 Contact Us</strong><br><br>
+      Privacy-related questions can be sent to:<br>
+      <a href="mailto:colasn095@gmail.com">colasn095@gmail.com</a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 PialaSport · <a href="terms-of-service.html">Terms of Service</a> · <a href="privacy-policy.html">Privacy Policy</a></p>
+    <p style="margin-top:6px">PialaSport adalah proyek independen dan tidak berafiliasi dengan FIFA, UEFA, PSSI, atau platform media sosial mana pun.</p>
+  </footer>
+
+</div>
+
+<script>
+  function switchLang(lang, btn) {
+    document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
